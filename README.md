@@ -22,12 +22,6 @@ Notes
 - The page navigation is handled by the `showPage(pageId)` function in `index.html`. It toggles `.page.active` and highlights nav links.
 - Tailwind is included via CDN in `index.html`. For production or significant styling changes, consider switching to a local Tailwind build pipeline.
 
-## Suggestions / Next steps
-- Optimize images (WebP, srcset, lazy-loading) and compress large assets.
-- Move inline JS into a small `scripts.js` file for clarity and caching.
-- Improve accessibility: add ARIA labels, keyboard navigation support, and semantic landmarks.
-- If you want offline Tailwind or custom production builds, set up a simple Node/Tailwind toolchain.
-
 ## License
 MIT — see source files for attribution.
 
