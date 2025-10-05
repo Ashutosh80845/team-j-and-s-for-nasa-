@@ -1,0 +1,45 @@
+/* Extracted styles from index.html */
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+.ice-crack-effect {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--crack-color) 70%),
+                    linear-gradient(to right, rgba(255, 255, 255, 0) 0%, var(--crack-color) 80%);
+  background-size: 1px 100%, 100% 1px;
+  background-position: 50% 100%, 0% 50%;
+  background-repeat: no-repeat;
+  transform: rotate(45deg) scale(2);
+  opacity: 0.1;
+  pointer-events: none;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+}
+.nav-link {
+  transition: color 0.3s ease;
+}
+.nav-link.active {
+  color: #359EFF;
+  font-weight: 700;
+}
+
+/* Conversation offset utilities */
+.conversation {
+  margin-left: 0.75rem; /* small offset on mobile */
+}
+.conversation-right {
+  margin-right: 0.75rem; /* small offset on mobile for right-aligned bubbles */
+}
+@media (min-width: 768px) {
+  .conversation {
+    margin-left: 2rem;
+  }
+  .conversation-right {
+    margin-right: 2rem;
+  }
+}

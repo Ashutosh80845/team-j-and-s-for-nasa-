@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoTales - Cosmic Conversations</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#359EFF",
+          "background-light": "#f5f7f8",
+          "background-dark": "#0f1923"
+        },
+        fontFamily: {
+          display: ["Space Grotesk"]
+        },
+        borderRadius: {
+          DEFAULT: "0.5rem",
+          lg: "1rem",
+          xl: "1.5rem",
+          full: "9999px"
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="min-h-screen flex flex-col">
+  <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg class="h-8 w-8 text-primary" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-4-4 1.41-1.41L10 12.17l6.59-6.59L18 7l-8 8z"></path>
+          </svg>
+          <h1 class="text-2xl font-bold text-gray-900 dark:text-white">EcoTales</h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer" onclick="showPage('home')">Home</a>
+          <a class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer" onclick="showPage('deforestation')">Deforestation</a>
+          <a class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer" onclick="showPage('ice-melting')">Ice Melting</a>
+          <a class="nav-link text-gray-600 dark:text-gray-300 hover:text-primary transition-colors cursor-pointer" onclick="showPage('global-warming')">Global Warming</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <!-- Listen button removed -->
+         </div>
+       </div>
+     </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+      <div class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">A Conversation About Our Planet</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">An interactive story told by Earth, Mars, and Venus.</p>
+          </div>
+          <div class="space-y-8">
+            <div class="flex items-start gap-4">
+              <div class="w-16 h-16 rounded-full bg-primary flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-white">public</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-primary">Earth</h3>
+                <p class="mt-1 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                  "It's getting warmer, isn't it? The ice caps are melting faster than ever, and the forests are shrinking. I'm worried about the future."
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 justify-end text-right">
+              <div>
+                <h3 class="font-bold text-xl text-red-500">Mars</h3>
+                <p class="mt-1 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                  "I remember when I had oceans and a thriving atmosphere. Now, I'm just a cold, dry planet. It's a cautionary tale, Earth."
+                </p>
+              </div>
+              <div class="w-16 h-16 rounded-full bg-red-500/20 dark:bg-red-500/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-red-500">brightness_4</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-16 h-16 rounded-full bg-amber-500/20 dark:bg-amber-500/10 flex-shrink-0 flex items-center justify-center">
+                <span class="material-symbols-outlined text-4xl text-amber-500">local_fire_department</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-amber-500">Venus</h3>
+                <p class="mt-1 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                  "I'm a prime example of what happens when greenhouse gases run rampant. My surface temperature is hot enough to melt lead. It's a harsh reality."
+                </p>
+              </div>
+            </div>
+            <div class="border-t border-gray-200 dark:border-gray-700 my-8"></div>
+            <div class="text-center bg-primary/10 dark:bg-primary/20 p-8 rounded-lg">
+              <h3 class="font-bold text-2xl text-primary mb-4">A Call to Action</h3>
+              <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed max-w-2xl mx-auto">
+                Earth: "We need to act now. Reduce emissions, protect our forests, and find sustainable solutions. It's our only hope."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICE MELTING PAGE -->
+    <div id="ice-melting" class="page">
+      <div class="px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Centered section heading -->
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tighter">Ice Melting</h1>
+          <p class="mt-2 text-lg text-gray-600 dark:text-gray-400">A chilling conversation about a warming world.</p>
+        </div>
+
+        <div class="w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <!-- Left: Info card for Ice Melting (SASSIE) -->
+            <aside>
+              <div class="h-full flex flex-col justify-between space-y-4 rounded-lg border border-gray-300 dark:border-gray-700 p-6 bg-white/60 dark:bg-gray-900/40">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">SASSIE Arctic Field Campaign – Fall 2022</h3>
+                  <p class="text-gray-700 dark:text-gray-300 mt-2">The SASSIE project (Salinity and Stratification at the Sea Ice Edge) is a NASA experiment to understand how melting sea ice affects the ocean, including sea surface temperature (SST), stratification, and future ice growth. From August to October 2022 the team sampled the transition from summer melt to autumn ice formation in the Beaufort Sea.</p>
+
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Measurements</h4>
+                    <ul class="list-disc ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-2">
+                      <li>Delta-18O measurements (ratio of 18O to 16O) to trace water sources.</li>
+                      <li>Sea surface temperature (SST) and stratification observations.</li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Sample Collection</h4>
+                    <ul class="list-disc ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-1">
+                      <li>Water samples: GoFlo bottle lowered from the ship or Salinity Snake outflow.</li>
+                      <li>Ice samples: Collected at ice stations by drilling and melting pieces for analysis.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">Data format: netCDF • Campaign: Aug–Oct 2022</div>
+              </div>
+            </aside>
+
+            <!-- Right: Conversation + audio -->
+            <div>
+              <div class="h-full flex flex-col justify-between space-y-8">
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-white">public</span>
+                      </div>
+                    </div>
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4 pr-6">
+                      <div class="ice-crack-effect" style="--crack-color: #359EFF"></div>
+                      <p class="font-medium text-gray-900 dark:text-white">Earth</p>
+                      <p class="text-gray-700 dark:text-gray-300">My glaciers are crying… The ice that stood for ages is melting away.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4 justify-end">
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4 text-right max-w-prose">
+                      <p class="font-medium text-gray-900 dark:text-white">Mars</p>
+                      <p class="text-gray-700 dark:text-gray-300">I had ice once too — hidden beneath my dust. When it melted, it vanished forever.</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-red-500/20 dark:bg-red-500/30 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-red-500">emergency_heat</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-amber-500/20 dark:bg-amber-500/30 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-amber-500">local_fire_department</span>
+                      </div>
+                    </div>
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4">
+                      <p class="font-medium text-gray-900 dark:text-white">Venus</p>
+                      <p class="text-gray-700 dark:text-gray-300">Those melting tears will raise your seas, drown your lands, and silence your forests.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-white">public</span>
+                      </div>
+                    </div>
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4">
+                      <p class="font-medium text-gray-900 dark:text-white">Earth</p>
+                      <p class="text-gray-700 dark:text-gray-300">Sometimes I wonder if my people see what they’re doing.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4 justify-end">
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4 text-right max-w-prose">
+                      <p class="font-medium text-gray-900 dark:text-white">Mars</p>
+                      <p class="text-gray-700 dark:text-gray-300">They will… when the water reaches their doors.</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-red-500/20 dark:bg-red-500/30 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-red-500">brightness_4</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-amber-500/20 dark:bg-amber-500/30 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-amber-500">local_fire_department</span>
+                      </div>
+                    </div>
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4">
+                      <p class="font-medium text-gray-900 dark:text-white">Venus</p>
+                      <p class="text-gray-700 dark:text-gray-300">Don’t give up yet, Blue One. Some of them are fighting for you.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                      <div class="size-12 rounded-full bg-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined text-2xl text-white">public</span>
+                      </div>
+                    </div>
+                    <div class="relative flex-1 rounded-lg bg-gray-100 dark:bg-gray-800/50 p-4">
+                      <p class="font-medium text-gray-900 dark:text-white">Earth</p>
+                      <p class="text-gray-700 dark:text-gray-300">Yes… the ones who plant, recycle, protect — maybe they’ll save me.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- audio block should remain at bottom -->
+                <!-- Ice Melting audio removed -->
+              </div>
+            </div>
+          </div>
+         </div>
+       </div>
+     </div>
+
+    <!-- GLOBAL WARMING PAGE -->
+    <div id="global-warming" class="page">
+      <div class="px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Centered section heading -->
+        <div class="max-w-4xl mx-auto text-center mb-8">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Global Warming</h2>
+          <p class="mt-2 text-lg text-gray-600 dark:text-gray-400">A story of rising temperatures and urgent warnings.</p>
+        </div>
+
+        <div class="w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <!-- Left: ECOSTRESS info card -->
+            <aside>
+              <div class="h-full flex flex-col justify-between space-y-4 rounded-lg border border-gray-300 dark:border-gray-700 p-6 bg-white/60 dark:bg-gray-900/40">
+                <div>
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">ECOSTRESS Land Surface Temperature &amp; Emissivity (LST&amp;E) – Public Data Summary</h3>
+                  <p class="text-gray-700 dark:text-gray-300 mt-2">What It Is: ECOSTRESS is a sensor on the ISS that measures plant temperatures to see how much water plants need and how stressed they are.</p>
+                  <p class="text-gray-700 dark:text-gray-300"><strong>Where It Works:</strong> Covers almost the whole world between 52°N and 52°S.</p>
+
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Available Data</h4>
+                    <ul class="list-disc ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-2">
+                      <li><strong>ECO2LSTE Version 1</strong> (now retired) measured land temperatures and emissivity in five thermal bands at 70 m resolution.</li>
+                      <li>Data used a smart physics algorithm to separate temperature and emissivity.</li>
+                      <li>You need <strong>ECO1BGEO</strong> to map it to real-world locations.</li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-2">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">What’s Included</h4>
+                    <ul class="list-disc ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-1">
+                      <li>Temperature, emissivity for bands 1–5, quality checks, error info, wideband emissivity, and water vapor.</li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-2">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Past Issues</h4>
+                    <ul class="list-disc ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-1">
+                      <li>Some gaps in 2018–2019 due to storage problems.</li>
+                      <li>2019–2023: Only 3 bands collected sometimes; missing data replaced with placeholders.</li>
+                      <li>Feb 2020: Band 4 had errors; Feb 17 had no data. All fixed now.</li>
+                      <li>April 2023: Back to full 5-band mode; 3- and 5-band data are mixed for better coverage.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">Source: ECOSTRESS • Bands: 1–5 • Coverage: ~52°N to 52°S</div>
+              </div>
+            </aside>
+
+            <!-- Right: Conversation + audio -->
+            <div>
+              <div class="h-full flex flex-col justify-between space-y-8">
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <div class="h-12 w-12 shrink-0 rounded-full bg-primary flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-white">public</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 dark:text-white">Earth</p>
+                      <div class="mt-1 rounded-lg rounded-tl-none bg-gray-200/50 dark:bg-gray-800/50 p-4">
+                        <p class="text-gray-700 dark:text-gray-300">My temperatures are rising. Summers burn hotter every year. Even my coldest places are fading.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="h-12 w-12 shrink-0 rounded-full bg-amber-500/20 dark:bg-amber-500/30 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-amber-500">local_fire_department</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 dark:text-white">Venus</p>
+                      <div class="mt-1 rounded-lg rounded-tl-none bg-gray-200/50 dark:bg-gray-800/50 p-4">
+                        <p class="text-gray-700 dark:text-gray-300">Now you understand my pain. I used to be cooler, too… until my own gases trapped every bit of heat.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4 justify-end">
+                    <div class="text-right">
+                      <p class="font-bold text-gray-900 dark:text-white">Mars</p>
+                      <div class="mt-1 rounded-lg rounded-tr-none bg-gray-100 dark:bg-gray-800/50 p-4 text-white">
+                        <p class="text-gray-700 dark:text-gray-300">I went the opposite way — I lost my warmth and became a frozen desert. Balance is the secret, Earth.</p>
+                      </div>
+                    </div>
+                    <div class="h-12 w-12 shrink-0 rounded-full bg-red-500/20 dark:bg-red-500/30 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-red-500">brightness_4</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="h-12 w-12 shrink-0 rounded-full bg-primary flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-white">public</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 dark:text-white">Earth</p>
+                      <div class="mt-1 rounded-lg rounded-tl-none bg-gray-200/50 dark:bg-gray-800/50 p-4">
+                        <p class="text-gray-700 dark:text-gray-300">I try to stay balanced, but they keep burning fuels, cutting shade, and warming me up faster than I can recover.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="h-12 w-12 shrink-0 rounded-full bg-amber-500/20 dark:bg-amber-500/30 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-amber-500">local_fire_department</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-gray-900 dark:text-white">Venus</p>
+                      <div class="mt-1 rounded-lg rounded-tl-none bg-gray-200/50 dark:bg-gray-800/50 p-4">
+                        <p class="text-gray-700 dark:text-gray-300">Tell them before it’s too late. Once the heat takes over, you’ll never cool down again.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start justify-end gap-4">
+                    <div class="text-right">
+                      <p class="font-bold text-gray-900 dark:text-white">Earth</p>
+                      <div class="mt-1 rounded-lg rounded-tr-none bg-primary p-4 text-white">
+                        <p>I try to stay balanced, but they keep burning fuels, cutting shade, and warming me up faster than I can recover.</p>
+                      </div>
+                    </div>
+                    <div class="h-12 w-12 shrink-0 rounded-full bg-primary flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-white">public</span>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Audio block at bottom -->
+                <!-- Global Warming audio removed -->
+              </div>
+            </div>
+          </div>
+         </div>
+       </div>
+     </div>
+
+    <!-- DEFORESTATION PAGE -->
+    <div id="deforestation" class="page">
+      <div class="px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Centered section heading -->
+        <div class="max-w-4xl mx-auto text-center mb-8">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Deforestation</h1>
+        </div>
+
+        <div class="w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <!-- Left column: info card (equal width on md+) -->
+            <aside class="order-1 md:order-1">
+              <div class="h-full flex flex-col justify-between space-y-4 rounded-lg border border-gray-300 dark:border-gray-700 p-6 bg-white/60 dark:bg-gray-900/40">
+                <div>
+                  <!-- Featured image for the dataset (place deforestation.jpg in the project root or adjust path) -->
+                  <img src="deforestation.png" alt="Deforestation preview" class="w-full h-48 md:h-64 object-cover object-top rounded-lg mb-4" />
+                  <h3 class="text-xl font-bold text-gray-900 dark:text-white">Deforestation in the Amazon: NASA's Predictions (2002-2050)</h3>
+                  <p class="text-gray-700 dark:text-gray-300">The dataset shows predicted deforestation in the Amazon Basin (includes Legal Amazon in Brazil + Guiana region + Amazon River watershed) from 2002 to 2050. Model used: <strong>SimAmazonia</strong>, which simulates monthly forest loss.</p>
+
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Two Scenarios</h4>
+                    <ol class="list-decimal ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-2">
+                      <li><strong>Business-as-Usual (BAU):</strong> Uses historical deforestation trends (1997-2002), adds effects of paving major roads, and shows what happens if humans keep cutting forests at the same rate.</li>
+                      <li><strong>Governance Scenario:</strong> Limits deforested land to 50% per subregion and includes protected areas to help slow deforestation; shows what happens if humans actively protect the forest.</li>
+                    </ol>
+                  </div>
+
+                  <div class="mt-4">
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Data Provided</h4>
+                    <ul class="list-disc ml-5 mt-2 text-gray-700 dark:text-gray-300 space-y-1">
+                      <li>98 GeoTiff files: one map per year for each scenario (2002-2050).</li>
+                      <li>1 CSV file: contains the input data derived from satellite images.</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- optional footer area (keeps card balanced) -->
+                <div class="text-sm text-gray-500 dark:text-gray-400">Model: SimAmazonia • Years: 2002–2050</div>
+              </div>
+            </aside>
+
+            <!-- Right column: conversation + audio (equal width on md+) -->
+            <div class="order-2 md:order-2">
+              <div class="h-full flex flex-col justify-between space-y-8">
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary/20 dark:bg-primary/30 flex-shrink-0 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-primary">public</span>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-4 flex-1">
+                      <p class="font-bold text-gray-900 dark:text-white">Earth</p>
+                      <p class="text-gray-700 dark:text-gray-300">My forests are disappearing at an alarming rate. It's like losing a part of myself. The Amazon, my green lung, is gasping for air. Every year, thousands of square kilometers are cleared for agriculture, logging, and infrastructure.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-red-500/20 dark:bg-red-500/30 flex-shrink-0 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-red-500">brightness_4</span>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-4 flex-1">
+                      <p class="font-bold text-gray-900 dark:text-white">Mars</p>
+                      <p class="text-gray-700 dark:text-gray-300">I remember when I had forests, long ago. They were vast and teeming with life. Now, I'm just a dry, dusty planet. It's a harsh reality. Your humans dream of colonizing me, but they must first learn to protect you, Earth.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-amber-500/20 dark:bg-amber-500/30 flex-shrink-0 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-amber-500">local_fire_department</span>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-4 flex-1">
+                      <p class="font-bold text-gray-900 dark:text-white">Venus</p>
+                      <p class="text-gray-700 dark:text-gray-300">I never had forests, but I understand the importance of a balanced atmosphere. My runaway greenhouse effect is a cautionary tale. Deforestation can lead to severe consequences. Trees are vital carbon sinks.</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-primary/20 dark:bg-primary/30 flex-shrink-0 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-2xl text-primary">public</span>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-4 flex-1">
+                      <p class="font-bold text-gray-900 dark:text-white">Earth</p>
+                      <p class="text-gray-700 dark:text-gray-300">Your words are a stark reminder of what's at stake. It's not just about the trees; it's about the air we breathe, the water we drink, and the future of all life that depends on me. I hope it's not too late.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Deforestation audio removed -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-background-light dark:bg-background-dark mt-auto border-t border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-6 py-6 text-center text-gray-500 dark:text-gray-400">
+      <p>© 2024 EcoTales. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function showPage(pageId) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    
+    // Show selected page
+    const selectedPage = document.getElementById(pageId);
+    if (selectedPage) {
+      selectedPage.classList.add('active');
+    }
+    
+    // Update navigation active state
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    const activeLink = document.querySelector(`[onclick="showPage('${pageId}')"]`);
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  // Set home as active on load
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('[onclick="showPage(\'home\')"]').classList.add('active');
+  });
+</script>
+</body>
+</html>
